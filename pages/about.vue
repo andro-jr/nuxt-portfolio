@@ -6,4 +6,8 @@
 
 <script setup>
 const layout = "another";
+
+useHead({
+  title: "About",
+});
 </script>
