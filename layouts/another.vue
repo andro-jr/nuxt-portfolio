@@ -1,5 +1,5 @@
 <template>
-  <div style="background: red">
+  <div>
     This is another layout example
     <slot />
   </div>
