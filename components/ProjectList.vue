@@ -34,5 +34,4 @@ const { error, pending, data } = await useFetch(
 const repos = computed(() =>
   data.value.sort((a, b) => b.stargazers_count - a.stargazers_count)
 );
-console.log("data :", data);
 </script>
