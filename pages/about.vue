@@ -1,3 +1,9 @@
 <template>
-  <div>This is about page</div>
+  <NuxtLayout :name="layout">
+    <div>This is about page</div>
+  </NuxtLayout>
 </template>
+
+<script setup>
+const layout = "another";
+</script>
