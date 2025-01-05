@@ -5,12 +5,14 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-    "@nuxt/content",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxt/content"],
+  ssr: false,
   colorMode: {
     classSuffix: "",
+  },
+  tailwindcss: {
+    config: {
+      plugins: [require("@tailwindcss/typography")],
+    },
   },
 });
