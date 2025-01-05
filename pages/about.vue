@@ -1,7 +1,7 @@
 <template>
-  <NuxtLayout :name="layout">
-    <div>This is about page</div>
-  </NuxtLayout>
+  <article class="prose dark:prose-invert">
+    <ContentDoc path="/about" />
+  </article>
 </template>
 
 <script setup>
