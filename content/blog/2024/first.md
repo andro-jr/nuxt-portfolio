@@ -1,5 +1,5 @@
 ---
-title: "Title of the page"
+title: "First blog of our website"
 description: "meta description of the page"
 head:
   meta:
