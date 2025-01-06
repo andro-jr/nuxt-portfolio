@@ -10,7 +10,9 @@
           :href="post._path"
           class="column hover:bg-gray-100 dark:hover:bg-gray-800"
         >
-          <div class="text-gray-500">2023</div>
+          <div class="text-gray-500 min-w-10">
+            {{ post.displayYear ? post.year : "" }}
+          </div>
           <div>
             {{ post.title }}
           </div>
@@ -21,12 +23,31 @@
 </template>
 
 <script setup>
-const { data: posts } = await useAsyncData("blog-list", () =>
+const { data } = await useAsyncData("blog-list", () =>
   queryContent("/blog")
     .where({ _path: { $ne: "/blog" } })
-    .only(["_path", "title"])
+    .only(["_path", "title", "publishedAt"])
+    .sort({ publishedAt: -1 })
     .find()
 );
+
+const posts = computed(() => {
+  if (!data.value) {
+    return [];
+  }
+  const result = [];
+  let lastYear = null;
+  for (const post of data.value) {
+    const year = new Date(post.publishedAt).getFullYear();
+    const displayYear = year !== lastYear;
+    post.displayYear = displayYear;
+    post.year = year;
+    result.push(post);
+    lastYear = year;
+  }
+  console.log("result :", result);
+  return result;
+});
 </script>
 
 <style scoped>
