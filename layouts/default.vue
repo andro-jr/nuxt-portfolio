@@ -3,7 +3,9 @@
     <header class="flex justify-between items-center mt-5">
       <div class="flex items-center space-x-8">
         <div>
-          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200"
+          <NuxtLink
+            to="/"
+            class="text-xl font-semibold p-2 hover:bg-gray-200 dark:hover:text-gray-700"
             >Prabin Pant
           </NuxtLink>
         </div>
