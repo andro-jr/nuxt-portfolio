@@ -31,7 +31,6 @@ onMounted(() => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
         activeId.value = entry.target.id;
-        console.log("activeId :", activeId);
         break;
       }
     }

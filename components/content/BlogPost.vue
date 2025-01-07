@@ -57,7 +57,6 @@ const posts = computed(() => {
     result.push(post);
     lastYear = year;
   }
-  console.log("result :", result);
   return result;
 });
 </script>
