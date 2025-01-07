@@ -15,4 +15,9 @@ export default defineNuxtConfig({
       plugins: [require("@tailwindcss/typography")],
     },
   },
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
+    },
+  },
 });
